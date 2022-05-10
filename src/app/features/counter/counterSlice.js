@@ -43,11 +43,19 @@ export const { increment, decrement, incrementByAmount, consoleVrem } = counterS
 export const incrementAsync = (amount) => (dispatch) => {
 
     async function func(){
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
-        const json = await response.json();
-        console.dir('json');
-        console.dir(json);
-        dispatch(consoleVrem(json));
+
+        try{
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
+            const json = await response.json();
+            console.dir('json');
+            console.dir(json);
+            dispatch(consoleVrem(json));
+        }catch(e){
+            console.error(e);
+        }finally{ // этот блок кода выполнится в любом случае
+            console.log('finally');
+        };
+        
     };
 
     func();
@@ -55,7 +63,7 @@ export const incrementAsync = (amount) => (dispatch) => {
 
 
 
-
+ /*
 
     const postRespons = () => {
         const result = new Promise( (func) => {
@@ -66,7 +74,7 @@ export const incrementAsync = (amount) => (dispatch) => {
 
     const url = 'https://jsonplaceholder.typicode.com/todos/1';
 
-    /*
+   
     function fetchTodos(){
 
         const result = postRespons()
