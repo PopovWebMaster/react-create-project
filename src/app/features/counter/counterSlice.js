@@ -61,61 +61,9 @@ export const incrementAsync = (amount) => (dispatch) => {
     func();
 
 
-
-
- /*
-
-    const postRespons = () => {
-        const result = new Promise( (func) => {
-            return func();
-        } );
-        return result;
-    };
-
-    const url = 'https://jsonplaceholder.typicode.com/todos/1';
-
-   
-    function fetchTodos(){
-
-        const result = postRespons()
-            .then(() => {
-                return fetch( url );
-            })
-            .then( ( respons ) => { 
-                return respons.json() 
-            });
-
-        return result;
-
-    };
-
-    fetchTodos()
-        .then( (data) => {
-            console.dir(data);
-        })
-        .catch( (e) => {
-            console.error(e);
-        });
-    */
-
-    // async function fetchAsyncTodos(){
-    //     await postRespons();
-    //     const respons = await fetch(url);
-    //     const data = await respons.json();
-    //     console.dir(data);
-    // };
-
-    // fetchAsyncTodos();
-
-
-
-   
-
-
-
-    setTimeout(() => {
-        dispatch(incrementByAmount(amount))
-    }, 1000)
+    // setTimeout(() => {
+    //     dispatch(incrementByAmount(amount))
+    // }, 1000)
 
 };
 
