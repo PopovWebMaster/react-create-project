@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
-    "build": "webpack --config ./build/webpack.build.conf.js"
+    "build": "webpack --config ./build/webpack.build.conf.js",
+    "upd": "node ./build/webpack.update.conf.js",
+    "up": "node -h"
+
+    
   },
   "keywords": [],
   "author": "",
